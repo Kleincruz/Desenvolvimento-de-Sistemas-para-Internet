@@ -1,0 +1,23 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Estoque extends Model
+{
+    use HasFactory;
+
+    protected $fillable = [
+        'nome',
+        'quantidade',
+    ];
+
+
+    public function ordenarPorIdDesc()
+    {
+        return $this->orderBy('id', 'desc')->get();
+    }
+
+}
